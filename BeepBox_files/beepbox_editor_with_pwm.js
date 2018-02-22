@@ -208,6 +208,17 @@ var beepbox;
                         drumBuffer = newBuffer;
                     }
                 }
+                else if (index == 11) {
+                    var drumBuffer = 1;
+                    for (var i = 0; i < 32768; i++) {
+                        wave[i] = (drumBuffer & 1) / 2.0 + 1.25;
+                        var newBuffer = drumBuffer >> 1;
+                        if (((drumBuffer + newBuffer) & 1) == 1) {
+                            newBuffer -= -11 << 0;
+                        }
+                        drumBuffer = newBuffer;
+                    }
+                }
                 else if (index == 8) {
                     var drumBuffer = 1;
                     for (var i = 0; i < 32768; i++) {
@@ -260,7 +271,7 @@ var beepbox;
         };
         return Config;
     }());
-    Config.scaleNames = ["easy :)", "easy :(", "island :)", "island :(", "blues :)", "blues :(", "normal :)", "normal :(", "dbl harmonic :)", "dbl harmonic :(", "nonatonic :)", "nonatonic :(", "enigma", "expert", "lydian", "harmonic minor"];
+    Config.scaleNames = ["easy :)", "easy :(", "island :)", "island :(", "blues :)", "blues :(", "normal :)", "normal :(", "dbl harmonic :)", "dbl harmonic :(", "nonatonic :)", "nonatonic :(", "enigma", "expert", "lydian", "harmonic minor", "octatonic"];
     Config.scaleFlags = [
         [true, false, true, false, true, false, false, true, false, true, false, false],
         [true, false, false, true, false, true, false, true, false, false, true, false],
@@ -278,6 +289,7 @@ var beepbox;
         [true, true, true, true, true, true, true, true, true, true, true, true],
 		[true, false, true, true, true, false, true, false, true, true, true, false],
 		[true, false, true, false, false, true, false, true, true, false, false, true],
+		[true, false, true, false, true, true, false, true, true, true, false, true],
 
     ];
     Config.pianoScaleFlags = [true, false, true, false, true, true, false, true, false, true, false, true];
@@ -302,16 +314,16 @@ var beepbox;
     Config.partCounts = [2, 3, 4, 5, 6, 8, 9, 12, 24, 50];
     Config.waveNames = ["triangle", "square", "pulse wide", "pulse narrow", "sawtooth", "double saw", "double pulse", "spiky", "plateau", "glitch", "lute", "squaretooth", "lyre", "tuba", "piccolo", "shrill lute", "bassoon", "shrill bass", "nes pulse", "saw bass", "euphonium", "shrill pulse", "r-sawtooth", "recorder", "narrow saw", "deep square", "ring pulse"];
     Config.waveVolumes = [1.0, 0.5, 0.5, 0.5, 0.65, 0.5, 0.4, 0.4, 0.94, 0.5, 0.5, 0.25, 0.15, 0.4, 0.4, 0.94, 0.5, 0.5, 0.4, 0.25, 0.3, 0.3, 0.2, 0.2, 1.2, 1.0, 1.0];
-    Config.drumNames = ["retro", "white", "clang", "buzz", "hollow", "chime", "harsh", "static", "metallic", "empty", "cutter"]; // The place to add these is around line 150.
-    Config.drumVolumes = [0.25, 1.0, 0.4, 0.3, 1.5, 2, 10, 0.27, 1.0, 1.0, 0.25];
-    Config.drumPitchRoots = [69, 69, 69, 69, 96, 69, 69, 96, 96, 96, 96, 69];
-    Config.drumPitchFilterMult = [100.0, 8.0, 100.0, 100.0, 1.0, 1.0, 1.0, 100.0, 1.0, 100.0, 100.0, 100.0];
-    Config.drumWaveIsSoft = [false, true, false, false, true, true, true, true, false, false, true];
+    Config.drumNames = ["retro", "white", "clang", "buzz", "hollow", "chime", "harsh", "static", "metallic", "empty", "cutter", "tick"]; // The place to add these is around line 150.
+    Config.drumVolumes = [0.25, 1.0, 0.4, 0.3, 1.5, 2, 10, 0.27, 1.0, 1.0, 0.25, 5.0];
+    Config.drumPitchRoots = [69, 69, 69, 69, 96, 69, 69, 96, 96, 96, 96, 69, 96];
+    Config.drumPitchFilterMult = [100.0, 8.0, 100.0, 100.0, 1.0, 1.0, 1.0, 100.0, 1.0, 100.0, 100.0, 100.0, 100.0];
+    Config.drumWaveIsSoft = [false, true, false, false, true, true, true, true, false, false, true, false];
     Config.filterNames = ["sustain sharp", "sustain medium", "sustain soft", "decay sharp", "decay medium", "decay soft", "ring", "overtone", "faint", "quiet"];
     Config.filterBases = [2.0, 3.5, 5.0, 1.0, 2.5, 4.0, -1.0, 1.0, 5, 2.0];
     Config.filterDecays = [0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0];
     Config.filterVolumes = [0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06];
-    Config.envelopeNames = ["seamless", "sudden", "smooth", "slide", "spring", "subdued", "sing"]; // The place to add these is around line 1850.
+    Config.envelopeNames = ["seamless", "sudden", "smooth", "slide", "spring", "subdued", "sing", "shudder"]; // The place to add these is around line 1850.
     Config.effectNames = ["none", "vibrato light", "vibrato delayed", "vibrato heavy", "tremolo light", "tremolo heavy", "tremolo + vibrato", "shake", "quiver"];
     Config.effectVibratos = [0.0, 0.15, 0.3, 0.45, 0.0, 0.0, 1.0, 0.0, 0.001];
     Config.effectTremolos = [0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.0, 1.0, 0.0];
@@ -1958,6 +1970,10 @@ var beepbox;
                     else if (envelope == 2) {
                         arpeggioVolumeStart = 0.0;
                     }
+					
+                    else if (envelope == 7) {
+                        arpeggioVolumeEnd = 1.0;
+					inhibitRestart = true}
 					
 					else if (envelope == 4) {
 					arpeggioVolumeStart = 6.0;}
@@ -6465,7 +6481,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.0")]),
+                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.2")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
