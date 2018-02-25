@@ -312,8 +312,8 @@ var beepbox;
     Config.instrumentsPerChannelMax = 10;
     Config.partNames = ["÷2", "÷3 (triplets)", "÷4 (standard)", "÷5 (challenge)", "÷6", "÷8", "÷9", "÷12 (hybrid)", "÷24", "÷50 (freestyle)"];
     Config.partCounts = [2, 3, 4, 5, 6, 8, 9, 12, 24, 50];
-    Config.waveNames = ["triangle", "square", "pulse wide", "pulse narrow", "sawtooth", "double saw", "double pulse", "spiky", "plateau", "glitch", "lute", "squaretooth", "lyre", "tuba", "piccolo", "shrill lute", "bassoon", "shrill bass", "nes pulse", "saw bass", "euphonium", "shrill pulse", "r-sawtooth", "recorder", "narrow saw", "deep square", "ring pulse"];
-    Config.waveVolumes = [1.0, 0.5, 0.5, 0.5, 0.65, 0.5, 0.4, 0.4, 0.94, 0.5, 0.5, 0.25, 0.15, 0.4, 0.4, 0.94, 0.5, 0.5, 0.4, 0.25, 0.3, 0.3, 0.2, 0.2, 1.2, 1.0, 1.0];
+    Config.waveNames = ["triangle", "square", "pulse wide", "pulse narrow", "sawtooth", "double saw", "double pulse", "spiky", "plateau", "glitch", "lute", "squaretooth", "lyre", "tuba", "piccolo", "shrill lute", "bassoon", "shrill bass", "nes pulse", "saw bass", "euphonium", "shrill pulse", "r-sawtooth", "recorder", "narrow saw", "deep square", "ring pulse", "sinusoid"];
+    Config.waveVolumes = [1.0, 0.5, 0.5, 0.5, 0.65, 0.5, 0.4, 0.4, 0.94, 0.5, 0.5, 0.25, 0.15, 0.4, 0.4, 0.94, 0.5, 0.5, 0.4, 0.25, 0.3, 0.3, 0.2, 0.2, 1.2, 1.0, 1.0, 1.7];
     Config.drumNames = ["retro", "white", "clang", "buzz", "hollow", "chime", "harsh", "static", "metallic", "empty", "cutter", "tick"]; // The place to add these is around line 150.
     Config.drumVolumes = [0.25, 1.0, 0.4, 0.3, 1.5, 2, 10, 0.27, 1.0, 1.0, 0.25, 5.0];
     Config.drumPitchRoots = [69, 69, 69, 69, 96, 69, 69, 96, 96, 96, 96, 69, 96];
@@ -324,15 +324,15 @@ var beepbox;
     Config.filterDecays = [0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0];
     Config.filterVolumes = [0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06];
     Config.envelopeNames = ["seamless", "sudden", "smooth", "slide", "spring", "subdued", "sing", "shudder"]; // The place to add these is around line 1850.
-    Config.effectNames = ["none", "vibrato light", "vibrato delayed", "vibrato heavy", "tremolo light", "tremolo heavy", "tremolo + vibrato", "shake", "quiver"];
-    Config.effectVibratos = [0.0, 0.15, 0.3, 0.45, 0.0, 0.0, 1.0, 0.0, 0.001];
-    Config.effectTremolos = [0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.0, 1.0, 0.0];
-    Config.effectVibratoDelays = [0, 0, 3, 0, 0, 0, 0, 3, 0];
-    Config.chorusNames = ["union", "shimmer", "hum", "honky tonk", "dissonant", "fifths", "octaves", "bowed", "harmonic", "harmonic hum", "voiced", "tenths", "fluctuate", "recurve", "thin"];
-    Config.chorusIntervals = [0.0, 0.02, 0.05, 0.1, 0.25, 3.5, 6, 0.02, 0.0, 0.05, 0.25, 7, 12, 0.005, 0.01];
-    Config.chorusOffsets = [0.0, 0.0, 0.0, 0.0, 0.0, 3.5, 6, 0.0, 0.0, 0.0, 3, 7, 0.0, 0.0, 50];
-    Config.chorusVolumes = [0.7, 0.8, 1.0, 1.0, 0.9, 0.9, 0.8, 1.0, 0.7, 1.0, 0.95, 0.9, 1.0, 0.8, 1.0];
-    Config.chorusHarmonizes = [false, false, false, false, false, false, false, false, true, true, false, false, false, false];
+    Config.effectNames = ["none", "vibrato light", "vibrato delayed", "vibrato heavy", "tremolo light", "tremolo heavy", "tremolo + vibrato", "shake", "quiver", "note destroyer"];
+    Config.effectVibratos = [0.0, 0.15, 0.3, 0.45, 0.0, 0.0, 1.0, 0.0, 0.001, 10];
+    Config.effectTremolos = [0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.0, 1.0, 0.0, 10];
+    Config.effectVibratoDelays = [0, 0, 3, 0, 0, 0, 0, 3, 0, 0];
+    Config.chorusNames = ["union", "shimmer", "hum", "honky tonk", "dissonant", "fifths", "octaves", "bowed", "harmonic", "harmonic hum", "voiced", "tenths", "fluctuate", "recurve", "thin", "detune"];
+    Config.chorusIntervals = [0.0, 0.02, 0.05, 0.1, 0.25, 3.5, 6, 0.02, 0.0, 0.05, 0.25, 7, 12, 0.005, 0.0, 0.0];
+    Config.chorusOffsets = [0.0, 0.0, 0.0, 0.0, 0.0, 3.5, 6, 0.0, 0.0, 0.0, 3, 7, 0.0, 0.0, 50, 0.1];
+    Config.chorusVolumes = [0.7, 0.8, 1.0, 1.0, 0.9, 0.9, 0.8, 1.0, 0.7, 1.0, 0.95, 0.9, 1.0, 0.8, 1.0, 0.7];
+    Config.chorusHarmonizes = [false, false, false, false, false, false, false, false, true, true, false, false, false, false, false];
     Config.volumeNames = ["loudest", "loud", "medium", "quiet", "quietest", "mute"];
     Config.volumeValues = [0.0, 0.5, 1.0, 1.5, 2.0, -1.0];
     Config.pitchChannelColorsDim = ["#bfae4e", "#009ccc", "#bd5859", "#d600c9", "#bb6906", "#a88981", "#8B4343", "#99512a", "#3e5b31", "#B1895B", "#310b75", "#59443a"];
@@ -378,7 +378,8 @@ var beepbox;
 		Config._centerWave([5.0, -5.1, 4.0, -4.1, 3.0, -3.1, 2.0, -2.1, 1.0, -1.1, 6.0]),
 		Config._centerWave([0.1, 0.13 / -0.1 ,0.13 / -0.3 ,0.13 / -0.5 ,0.13 / -0.7 ,0.13 / -0.9 ,0.13 / -0.11 ,0.13 / -0.31 ,0.13 / -0.51 ,0.13 / -0.71 ,0.13 / -0.91 ,0.13 / -0.12 ,0.13 / -0.32 ,0.13 / -0.52 ,0.13 / -0.72 ,0.13 / -0.92 ,0.13 / -0.13 ,0.13 / 0.13 ,0.13 / 0.92 ,0.13 / 0.72 ,0.13 / 0.52 ,0.13 / 0.32 ,0.13 / 0.12 ,0.13 / 0.91 ,0.13 / 0.71 ,0.13 / 0.51 ,0.13 / 0.31 ,0.13 / 0.11 ,0.13 / 0.9 ,0.13 / 0.7 ,0.13 / 0.5 ,0.13 / 0.3 ,0.13]),
         Config._centerWave([1.0, 2.25, 1.0, -1.0, -2.25, -1.0]),
-		Config._centerWave([1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0])
+		Config._centerWave([1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0]),
+       	Config._centerWave([0.0, 0.05, 0.125, 0.2, 0.25, 0.3, 0.425, 0.475, 0.525, 0.625, 0.675, 0.725, 0.775, 0.8, 0.825, 0.875, 0.9, 0.925, 0.95, 0.975, 0.98, 0.99, 0.995, 1, 0.995, 0.99, 0.98, 0.975, 0.95, 0.925, 0.9, 0.875, 0.825, 0.8, 0.775, 0.725, 0.675, 0.625, 0.525, 0.475, 0.425, 0.3, 0.25, 0.2, 0.125, 0.05, 0.0, -0.05, -0.125, -0.2, -0.25, -0.3, -0.425, -0.475, -0.525, -0.625, -0.675, -0.725, -0.775, -0.8, -0.825, -0.875, -0.9, -0.925, -0.95, -0.975, -0.98, -0.99, -0.995, -1, -0.995, -0.99, -0.98, -0.975, -0.95, -0.925, -0.9, -0.875, -0.825, -0.8, -0.775, -0.725, -0.675, -0.625, -0.525, -0.475, -0.425, -0.3, -0.25, -0.2, -0.125, -0.05]),
 
     ];
     Config._drumWaves = [null, null, null, null, null];
@@ -1400,7 +1401,7 @@ var beepbox;
                 for (var channel = 0; channel < jsonObject.channels.length; channel++) {
                     var channelObject = jsonObject.channels[channel];
                     if (channelObject.octaveScrollBar != undefined) {
-                        this.channelOctaves[channel] = this._clip(0, 5, channelObject.octaveScrollBar | 0);
+                        this.channelOctaves[channel] = this._clip(0, 10, channelObject.octaveScrollBar | 0);
                     }
                     this.instrumentVolumes[channel] = [];
                     this.instrumentWaves[channel] = [];
@@ -2243,6 +2244,8 @@ var beepbox;
             this.song = new beepbox.Song(string);
             this.synth = new beepbox.Synth(this.song);
             this.showFifth = localStorage.getItem("showFifth") == "true";
+            this.showMid = localStorage.getItem("showMid") == "true";
+            this.showGrad = localStorage.getItem("showGrad") == "true";
             this.showLetters = localStorage.getItem("showLetters") == "true";
             this.showChannels = localStorage.getItem("showChannels") == "true";
             this.showScrollBar = localStorage.getItem("showScrollBar") == "true";
@@ -2309,6 +2312,8 @@ var beepbox;
         };
         SongDocument.prototype.savePreferences = function () {
             localStorage.setItem("showFifth", this.showFifth ? "true" : "false");
+            localStorage.setItem("showMid", this.showMid ? "true" : "false");
+            localStorage.setItem("showGrad", this.showGrad ? "true" : "false");
             localStorage.setItem("showLetters", this.showLetters ? "true" : "false");
             localStorage.setItem("showChannels", this.showChannels ? "true" : "false");
             localStorage.setItem("showScrollBar", this.showScrollBar ? "true" : "false");
@@ -2421,7 +2426,7 @@ var beepbox;
 (function (beepbox) {
     var styleSheet = document.createElement('style');
     styleSheet.type = "text/css";
-    styleSheet.appendChild(document.createTextNode("\n\n.beepboxEditor {\n\t/* For some reason the default focus outline effect causes the entire editor to get repainted when any part of it changes. Border doesn't do that. */\n\tmargin: -3px;\n\tborder: 3px solid transparent;\n\twidth: 700px;\n\tdisplay: flex;\n\tflex-direction: row;\n\t-webkit-touch-callout: none;\n\t-webkit-user-select: none;\n\t-khtml-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\tposition: relative;\n\ttouch-action: manipulation;\n\tcursor: default;\n\tfont-size: small;\n}\n.beepboxEditor:focus {\n\toutline: none;\n\tborder-color: #555;\n}\n\n.beepboxEditor div {\n\tmargin: 0;\n\tpadding: 0;\n}\n\n.beepboxEditor .promptContainer {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbackground: rgba(0,0,0,0.5);\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n\n.beepboxEditor .prompt {\n\tmargin: auto;\n\ttext-align: center;\n\tbackground: #000;\n\tborder-radius: 15px;\n\tborder: 4px solid #444;\n\tcolor: #fff;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.beepboxEditor .prompt > *:not(:first-child) {\n\tmargin-top: 1.5em;\n}\n\n/* Use psuedo-elements to add cross-browser up & down arrows to select elements: */\n.beepboxEditor .selectContainer {\n\tposition: relative;\n}\n.beepboxEditor .selectContainer::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tright: 0.5em;\n\ttop: 0.4em;\n\tborder-bottom: 0.4em solid currentColor;\n\tborder-left: 0.3em solid transparent;\n\tborder-right: 0.3em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor .selectContainer::after {\n\tcontent: \"\";\n\tposition: absolute;\n\tright: 0.5em;\n\tbottom: 0.4em;\n\tborder-top: 0.4em solid currentColor;\n\tborder-left: 0.3em solid transparent;\n\tborder-right: 0.3em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor select {\n\tmargin: 0;\n\tpadding: 0 0.5em;\n\tdisplay: block;\n\theight: 2em;\n\tborder: none;\n\tborder-radius: 0.4em;\n\tbackground: #444444;\n\tcolor: inherit;\n\tfont-size: inherit;\n\tcursor: pointer;\n\n\t-webkit-appearance:none;\n\t-moz-appearance: none;\n\tappearance: none;\n}\n.beepboxEditor select:focus {\n\tbackground: #777777;\n\toutline: none;\n}\n/* This makes it look better in firefox on my computer... What about others?\n@-moz-document url-prefix() {\n\t.beepboxEditor select { padding: 0 2px; }\n}\n*/\n.beepboxEditor button {\n\tmargin: 0;\n\tposition: relative;\n\theight: 2em;\n\tborder: none;\n\tborder-radius: 0.4em;\n\tbackground: #444;\n\tcolor: inherit;\n\tfont-size: inherit;\n\tcursor: pointer;\n}\n.beepboxEditor button:focus {\n\tbackground: #777;\n\toutline: none;\n}\n.beepboxEditor button.playButton::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: -0.45em;\n\tmargin-top: -0.65em;\n\tborder-left: 1em solid currentColor;\n\tborder-top: 0.65em solid transparent;\n\tborder-bottom: 0.65em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor button.pauseButton::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: -0.5em;\n\tmargin-top: -0.65em;\n\twidth: 0.3em;\n\theight: 1.3em;\n\tbackground: currentColor;\n\tpointer-events: none;\n}\n.beepboxEditor button.pauseButton::after {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: 0.2em;\n\tmargin-top: -0.65em;\n\twidth: 0.3em;\n\theight: 1.3em;\n\tbackground: currentColor;\n\tpointer-events: none;\n}\n\n.beepboxEditor canvas {\n\toverflow: hidden;\n\tposition: absolute;\n\tdisplay: block;\n}\n\n.beepboxEditor .selectRow {\n\tmargin: 0;\n\theight: 2.5em;\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: space-between;\n}\n\n.beepboxEditor .selectRow > span {\n\tcolor: #999;\n}\n\n.beepboxEditor .editor-right-side {\n\tmargin-left: 6px;\n\twidth: 182px;\n\theight: 645px;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.beepboxEditor .editor-right-side > * {\n\tflex-shrink: 0;\n}\n\n.beepboxEditor input[type=text], .beepboxEditor input[type=number] {\n\tfont-size: inherit;\n\tbackground: transparent;\n\tborder: 1px solid #777;\n\tcolor: white;\n}\n\n.beepboxEditor input[type=checkbox] {\n  transform: scale(1.5);\n}\n\n.beepboxEditor input[type=range] {\n\t-webkit-appearance: none;\n\tcolor: inherit;\n\twidth: 100%;\n\theight: 2em;\n\tfont-size: inherit;\n\tmargin: 0;\n\tcursor: pointer;\n\tbackground-color: black;\n}\n.beepboxEditor input[type=range]:focus {\n\toutline: none;\n}\n.beepboxEditor input[type=range]::-webkit-slider-runnable-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n}\n.beepboxEditor input[type=range]::-webkit-slider-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tbackground: currentColor;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n\tmargin-top: -0.75em;\n}\n.beepboxEditor input[type=range]:focus::-webkit-slider-runnable-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-moz-range-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n}\n.beepboxEditor input[type=range]:focus::-moz-range-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-moz-range-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tborder: none;\n\tbackground: currentColor;\n\tcursor: pointer;\n}\n.beepboxEditor input[type=range]::-ms-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n\tborder-color: transparent;\n}\n.beepboxEditor input[type=range]:focus::-ms-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-ms-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tbackground: currentColor;\n\tcursor: pointer;\n}\n\n"));
+    styleSheet.appendChild(document.createTextNode("\n\n.beepboxEditor {\n\t/* For some reason the default focus outline effect causes the entire editor to get repainted when any part of it changes. Border doesn't do that. */\n\tmargin: -3px;\n\tborder: 3px solid transparent;\n\twidth: 700px;\n\tdisplay: flex;\n\tflex-direction: row;\n\t-webkit-touch-callout: none;\n\t-webkit-user-select: none;\n\t-khtml-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\tposition: relative;\n\ttouch-action: manipulation;\n\tcursor: default;\n\tfont-size: small;\n}\n.beepboxEditor:focus {\n\toutline: none;\n\tborder-color: #555;\n}\n\n.beepboxEditor div {\n\tmargin: 0;\n\tpadding: 0;\n}\n\n.beepboxEditor .promptContainer {\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\tbackground: rgba(0,0,0,0.5);\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n\n.beepboxEditor .prompt {\n\tmargin: auto;\n\ttext-align: center;\n\tbackground: #000;\n\tborder-radius: 15px;\n\tborder: 4px solid #444;\n\tcolor: #fff;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.beepboxEditor .prompt > *:not(:first-child) {\n\tmargin-top: 1.5em;\n}\n\n/* Use psuedo-elements to add cross-browser up & down arrows to select elements: */\n.beepboxEditor .selectContainer {\n\tposition: relative;\n}\n.beepboxEditor .selectContainer::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tright: 0.5em;\n\ttop: 0.4em;\n\tborder-bottom: 0.4em solid currentColor;\n\tborder-left: 0.3em solid transparent;\n\tborder-right: 0.3em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor .selectContainer::after {\n\tcontent: \"\";\n\tposition: absolute;\n\tright: 0.5em;\n\tbottom: 0.4em;\n\tborder-top: 0.4em solid currentColor;\n\tborder-left: 0.3em solid transparent;\n\tborder-right: 0.3em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor select {\n\tmargin: 0;\n\tpadding: 0 0.5em;\n\tdisplay: block;\n\theight: 2em;\n\tborder: none;\n\tborder-radius: 0.4em;\n\tbackground: #222222;\n\tcolor: inherit;\n\tfont-size: inherit;\n\tcursor: pointer;\n\n\t-webkit-appearance:none;\n\t-moz-appearance: none;\n\tappearance: none;\n}\n.beepboxEditor select:focus {\n\tbackground: #777777;\n\toutline: none;\n}\n/* This makes it look better in firefox on my computer... What about others?\n@-moz-document url-prefix() {\n\t.beepboxEditor select { padding: 0 2px; }\n}\n*/\n.beepboxEditor button {\n\tmargin: 0;\n\tposition: relative;\n\theight: 2em;\n\tborder: none;\n\tborder-radius: 0.4em;\n\tbackground: #444;\n\tcolor: inherit;\n\tfont-size: inherit;\n\tcursor: pointer;\n}\n.beepboxEditor button:focus {\n\tbackground: #777;\n\toutline: none;\n}\n.beepboxEditor button.playButton::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: -0.45em;\n\tmargin-top: -0.65em;\n\tborder-left: 1em solid currentColor;\n\tborder-top: 0.65em solid transparent;\n\tborder-bottom: 0.65em solid transparent;\n\tpointer-events: none;\n}\n.beepboxEditor button.pauseButton::before {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: -0.5em;\n\tmargin-top: -0.65em;\n\twidth: 0.3em;\n\theight: 1.3em;\n\tbackground: currentColor;\n\tpointer-events: none;\n}\n.beepboxEditor button.pauseButton::after {\n\tcontent: \"\";\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-left: 0.2em;\n\tmargin-top: -0.65em;\n\twidth: 0.3em;\n\theight: 1.3em;\n\tbackground: currentColor;\n\tpointer-events: none;\n}\n\n.beepboxEditor canvas {\n\toverflow: hidden;\n\tposition: absolute;\n\tdisplay: block;\n}\n\n.beepboxEditor .selectRow {\n\tmargin: 0;\n\theight: 2.5em;\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: center;\n\tjustify-content: space-between;\n}\n\n.beepboxEditor .selectRow > span {\n\tcolor: #999;\n}\n\n.beepboxEditor .editor-right-side {\n\tmargin-left: 6px;\n\twidth: 182px;\n\theight: 645px;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n.beepboxEditor .editor-right-side > * {\n\tflex-shrink: 0;\n}\n\n.beepboxEditor input[type=text], .beepboxEditor input[type=number] {\n\tfont-size: inherit;\n\tbackground: transparent;\n\tborder: 1px solid #777;\n\tcolor: white;\n}\n\n.beepboxEditor input[type=checkbox] {\n  transform: scale(1.5);\n}\n\n.beepboxEditor input[type=range] {\n\t-webkit-appearance: none;\n\tcolor: inherit;\n\twidth: 100%;\n\theight: 2em;\n\tfont-size: inherit;\n\tmargin: 0;\n\tcursor: pointer;\n\tbackground-color: black;\n}\n.beepboxEditor input[type=range]:focus {\n\toutline: none;\n}\n.beepboxEditor input[type=range]::-webkit-slider-runnable-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n}\n.beepboxEditor input[type=range]::-webkit-slider-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tbackground: currentColor;\n\tcursor: pointer;\n\t-webkit-appearance: none;\n\tmargin-top: -0.75em;\n}\n.beepboxEditor input[type=range]:focus::-webkit-slider-runnable-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-moz-range-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n}\n.beepboxEditor input[type=range]:focus::-moz-range-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-moz-range-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tborder: none;\n\tbackground: currentColor;\n\tcursor: pointer;\n}\n.beepboxEditor input[type=range]::-ms-track {\n\twidth: 100%;\n\theight: 0.5em;\n\tcursor: pointer;\n\tbackground: #444;\n\tborder-color: transparent;\n}\n.beepboxEditor input[type=range]:focus::-ms-track {\n\tbackground: #777;\n}\n.beepboxEditor input[type=range]::-ms-thumb {\n\theight: 2em;\n\twidth: 0.5em;\n\tborder-radius: 0.25em;\n\tbackground: currentColor;\n\tcursor: pointer;\n}\n\n"));
     document.head.appendChild(styleSheet);
 })(beepbox || (beepbox = {}));
 var beepbox;
@@ -2666,8 +2671,24 @@ var beepbox;
                 _this._svg.style.visibility = "visible";
                 if (_this._renderedFifths != _this._doc.showFifth) {
                     _this._renderedFifths = _this._doc.showFifth;
-                    _this._backgroundPitchRows[7].setAttribute("fill", _this._doc.showFifth ? "#446688" : "#444444");
+                    _this._backgroundPitchRows[7].setAttribute("fill", _this._doc.showFifth ? "#60389B" : "#222222");
                 }
+                _this._svg.style.visibility = "visible";
+                if (_this._renderedMid != _this._doc.showMid) {
+                    _this._renderedMid = _this._doc.showMid;
+                    _this._backgroundPitchRows[4].setAttribute("fill", _this._doc.showMid ? "#10997E" : "#222222");
+                }
+                _this._svg.style.visibility = "visible";
+                if (_this._renderedGrad != _this._doc.showGrad) {
+                    _this._renderedGrad = _this._doc.showGrad;
+                    _this._backgroundPitchRows[1].setAttribute("fill", _this._doc.showGrad ? "#AD6E19" : "#222222");
+                    _this._backgroundPitchRows[2].setAttribute("fill", _this._doc.showGrad ? "#9B8E3C" : "#222222");
+                    _this._backgroundPitchRows[3].setAttribute("fill", _this._doc.showGrad ? "#1C8D26" : "#222222");
+                    _this._backgroundPitchRows[5].setAttribute("fill", _this._doc.showGrad ? "#12728D" : "#222222");
+                    _this._backgroundPitchRows[6].setAttribute("fill", _this._doc.showGrad ? "#336696" : "#222222");                    _this._backgroundPitchRows[8].setAttribute("fill", _this._doc.showGrad ? "#9B345F" : "#222222");
+                    _this._backgroundPitchRows[9].setAttribute("fill", _this._doc.showGrad ? "#A1057A" : "#222222");
+                    _this._backgroundPitchRows[10].setAttribute("fill", _this._doc.showGrad ? "#F600E8" : "#222222");
+                    _this._backgroundPitchRows[11].setAttribute("fill", _this._doc.showGrad ? "#F20076" : "#222222");                }
                 for (var j = 0; j < 12; j++) {
                     _this._backgroundPitchRows[j].style.visibility = beepbox.Config.scaleFlags[_this._doc.song.scale][j] ? "visible" : "hidden";
                 }
@@ -2732,14 +2753,14 @@ var beepbox;
                 rectangle.setAttribute("x", "1");
                 rectangle.setAttribute("y", "" + (y * this._defaultPitchHeight + 1));
                 rectangle.setAttribute("height", "" + (this._defaultPitchHeight - 2));
-                rectangle.setAttribute("fill", (i == 0) ? "#886644" : "#444444");
+                rectangle.setAttribute("fill", (i == 0) ? "#A53A3D" : "#222222");
                 this._svgNoteBackground.appendChild(rectangle);
                 this._backgroundPitchRows[i] = rectangle;
             }
             this._backgroundDrumRow.setAttribute("x", "1");
             this._backgroundDrumRow.setAttribute("y", "1");
             this._backgroundDrumRow.setAttribute("height", "" + (this._defaultDrumHeight - 2));
-            this._backgroundDrumRow.setAttribute("fill", "#444444");
+            this._backgroundDrumRow.setAttribute("fill", "#222222");
             this._svgDrumBackground.appendChild(this._backgroundDrumRow);
             this._doc.notifier.watch(this._documentChanged);
             this._documentChanged();
@@ -3225,7 +3246,7 @@ var beepbox;
             this._renderedColor = "";
             this.container.setAttribute("x", "" + (x * 32));
             this.container.setAttribute("y", "" + (y * 32));
-            this._rect.setAttribute("fill", "#444444");
+            this._rect.setAttribute("fill", "#222222");
             this._label.setAttribute("fill", color);
         }
         Box.prototype.setSquashed = function (squashed, y) {
@@ -3243,7 +3264,7 @@ var beepbox;
         Box.prototype.setIndex = function (index, dim, selected, y, color) {
             if (this._renderedIndex != index) {
                 if (!this._renderedSelected && ((index == 0) != (this._renderedIndex == 0))) {
-                    this._rect.setAttribute("fill", (index == 0) ? "#000000" : "#444444");
+                    this._rect.setAttribute("fill", (index == 0) ? "#000000" : "#222222");
                 }
                 this._renderedIndex = index;
                 this._text.data = "" + index;
@@ -3264,7 +3285,7 @@ var beepbox;
                     this._label.setAttribute("fill", "#000000");
                 }
                 else {
-                    this._rect.setAttribute("fill", (this._renderedIndex == 0) ? "#000000" : "#444444");
+                    this._rect.setAttribute("fill", (this._renderedIndex == 0) ? "#000000" : "#222222");
                     this._label.setAttribute("fill", color);
                 }
             }
@@ -4973,7 +4994,7 @@ var beepbox;
             this._editorWidth = 512;
             this._editorHeight = 20;
             this._notches = beepbox.svgElement("svg", { "pointer-events": "none" });
-            this._handle = beepbox.svgElement("rect", { fill: "#444444", x: 0, y: 2, width: 10, height: this._editorHeight - 4 });
+            this._handle = beepbox.svgElement("rect", { fill: "#222222", x: 0, y: 2, width: 10, height: this._editorHeight - 4 });
             this._handleHighlight = beepbox.svgElement("rect", { fill: "none", stroke: "white", "stroke-width": 2, "pointer-events": "none", x: 0, y: 1, width: 10, height: this._editorHeight - 2 });
             this._leftHighlight = beepbox.svgElement("path", { fill: "white", "pointer-events": "none" });
             this._rightHighlight = beepbox.svgElement("path", { fill: "white", "pointer-events": "none" });
@@ -5136,7 +5157,7 @@ var beepbox;
                     this._notches.removeChild(this._notches.firstChild);
                 for (var i = 0; i <= this._doc.song.barCount; i++) {
                     var lineHeight = (i % 16 == 0) ? 0 : ((i % 4 == 0) ? this._editorHeight / 8 : this._editorHeight / 3);
-                    this._notches.appendChild(beepbox.svgElement("rect", { fill: "#444444", x: i * this._barWidth - 1, y: lineHeight, width: 2, height: this._editorHeight - lineHeight * 2 }));
+                    this._notches.appendChild(beepbox.svgElement("rect", { fill: "#222222", x: i * this._barWidth - 1, y: lineHeight, width: 2, height: this._editorHeight - lineHeight * 2 }));
                 }
             }
             if (resized || this._renderedBarPos != this._doc.barScrollPos) {
@@ -5164,7 +5185,7 @@ var beepbox;
             this._octaveCount = 7;
             this._octaveHeight = (this._editorHeight - this._notchHeight) / this._octaveCount;
             this._barHeight = (this._octaveHeight * 3 + this._notchHeight);
-            this._handle = beepbox.svgElement("rect", { fill: "#444444", x: 2, y: 0, width: this._editorWidth - 4, height: this._barHeight });
+            this._handle = beepbox.svgElement("rect", { fill: "#222222", x: 2, y: 0, width: this._editorWidth - 4, height: this._barHeight });
             this._handleHighlight = beepbox.svgElement("rect", { fill: "none", stroke: "white", "stroke-width": 2, "pointer-events": "none", x: 1, y: 0, width: this._editorWidth - 2, height: this._barHeight });
             this._upHighlight = beepbox.svgElement("path", { fill: "white", "pointer-events": "none" });
             this._downHighlight = beepbox.svgElement("path", { fill: "white", "pointer-events": "none" });
@@ -5262,7 +5283,7 @@ var beepbox;
             this._documentChanged();
             this._svg.appendChild(this._handle);
             for (var i = 0; i <= this._octaveCount; i++) {
-                this._svg.appendChild(beepbox.svgElement("rect", { fill: "#886644", x: 0, y: i * this._octaveHeight, width: this._editorWidth, height: this._notchHeight }));
+                this._svg.appendChild(beepbox.svgElement("rect", { fill: "#A53A3D", x: 0, y: i * this._octaveHeight, width: this._editorWidth, height: this._notchHeight }));
             }
             this._svg.appendChild(this._handleHighlight);
             this._svg.appendChild(this._upHighlight);
@@ -6434,8 +6455,10 @@ var beepbox;
                 option("", "Preferences Menu", true, true),
                 option("showLetters", "Show Piano", false, false),
                 option("showFifth", "Highlight 'Fifth' Notes", false, false),
+                option("showMid", "Highlight 'Mid' Notes", false, false),
                 option("showChannels", "Show All Channels", false, false),
                 option("showScrollBar", "Octave Scroll Bar", false, false),
+                option("showGrad", "Rainbow", false, false),
             ]);
             this._exportButton = button({ style: "margin: 5px 0;", type: "button" }, [text("Export")]);
             this._scaleDropDown = buildOptions(select({ style: "width:9em;" }), beepbox.Config.scaleNames);
@@ -6481,7 +6504,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.2")]),
+                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.3")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
@@ -6553,8 +6576,10 @@ var beepbox;
                 var optionCommands = [
                     (_this._doc.showLetters ? " " : "") + "Show Piano",
                     (_this._doc.showFifth ? " " : "") + "Highlight 'Fifth' Notes",
+                    (_this._doc.showMid ? " " : "") + "Highlight 'Third' Notes",
                     (_this._doc.showChannels ? " " : "") + "Show All Channels",
                     (_this._doc.showScrollBar ? " " : "") + "Octave Scroll Bar",
+                    (_this._doc.showGrad ? " " : "") + "Rainbow",
                 ];
                 for (var i = 0; i < optionCommands.length; i++) {
                     var option_1 = _this._optionsButton.children[i + 1];
@@ -6793,6 +6818,12 @@ var beepbox;
                         break;
                     case "showFifth":
                         _this._doc.showFifth = !_this._doc.showFifth;
+                        break;
+                    case "showMid":
+                        _this._doc.showMid = !_this._doc.showMid;
+                        break;
+	                case "showGrad":
+                        _this._doc.showGrad = !_this._doc.showGrad;
                         break;
                     case "showChannels":
                         _this._doc.showChannels = !_this._doc.showChannels;
