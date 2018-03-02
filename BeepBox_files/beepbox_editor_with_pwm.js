@@ -330,7 +330,7 @@ var beepbox;
     Config.effectTremolos = [0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.0, 1.0, 0.0, 10];
     Config.effectVibratoDelays = [0, 0, 3, 0, 0, 0, 0, 3, 0, 0];
     Config.chorusNames = ["union", "shimmer", "hum", "honky tonk", "dissonant", "perfect fifths", "perfect octaves", "bowed", "harmonic", "harmonic hum", "seconds +", "ninths :)", "fluctuate", "recurve", "thin", "detune", "perfect fourths", "ninths :("];
-    Config.chorusIntervals = [0.0, 0.02, 0.05, 0.1, 0.25, 7, 3.5, 6, 0.02, 0.0, 0.05, 0.25, 12, 0.005, 0.0, 0.0, 2.5, 6.5];
+    Config.chorusIntervals = [0.0, 0.02, 0.05, 0.1, 0.25, 3.5, 6, 0.02, 0.0, 0.05, 0.25, 7, 12, 0.005, 0.0, 0.0, 2.5, 6.5];
     Config.chorusOffsets = [0.0, 0.0, 0.0, 0.0, 0.0, 3.5, 6, 0.0, 0.0, 0.0, 3, 7, 0.0, 0.0, 50, 0.1, 2.5, 6.5];
     Config.chorusVolumes = [0.7, 0.8, 1.0, 1.0, 0.9, 0.9, 0.8, 1.0, 0.7, 1.0, 0.9, 0.95, 1.0, 0.8, 1.0, 0.7, 0.9, 0.9, 0.9];
     Config.chorusHarmonizes = [false, false, false, false, false, false, false, false, true, true, false, false, false, false, false];
