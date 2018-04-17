@@ -313,17 +313,17 @@ var beepbox;
     Config.instrumentsPerChannelMax = 10;
     Config.partNames = ["÷2", "÷3 (triplets)", "÷4 (standard)", "÷5 (challenge)", "÷6", "÷8", "÷9", "÷12 (hybrid)", "÷24", "÷50 (freestyle)"];
     Config.partCounts = [2, 3, 4, 5, 6, 8, 9, 12, 24, 50];
-    Config.waveNames = ["triangle", "square", "pulse wide", "pulse narrow", "sawtooth", "double saw", "double pulse", "spiky", "plateau", "glitch", "lute", "squaretooth", "lyre", "tuba", "piccolo", "shrill lute", "bassoon", "shrill bass", "nes pulse", "saw bass", "euphonium", "shrill pulse", "r-sawtooth", "recorder", "narrow saw", "deep square", "ring pulse", "sinusoid"];
-    Config.waveVolumes = [1.0, 0.5, 0.5, 0.5, 0.65, 0.5, 0.4, 0.4, 0.94, 0.5, 0.5, 0.25, 0.15, 0.4, 0.4, 0.94, 0.5, 0.5, 0.4, 0.25, 0.3, 0.3, 0.2, 0.2, 1.2, 1.0, 1.0, 1.7];
+    Config.waveNames = ["triangle", "square", "pulse wide", "pulse narrow", "sawtooth", "double saw", "double pulse", "spiky", "plateau", "glitch", "lute", "squaretooth", "lyre", "tuba", "piccolo", "shrill lute", "bassoon", "shrill bass", "nes pulse", "saw bass", "euphonium", "shrill pulse", "r-sawtooth", "recorder", "narrow saw", "deep square", "ring pulse", "sinusoid", "double sine"];
+    Config.waveVolumes = [1.0, 0.5, 0.5, 0.5, 0.65, 0.5, 0.4, 0.4, 0.94, 0.5, 0.5, 0.25, 0.15, 0.4, 0.4, 0.94, 0.5, 0.5, 0.4, 0.25, 0.3, 0.3, 0.2, 0.2, 1.2, 1.0, 1.0, 1.7, 1.0];
     Config.drumNames = ["retro", "white", "clang", "buzz", "hollow", "chime", "harsh", "static", "metallic", "empty", "cutter", "tick"]; // The place to add these is around line 150.
     Config.drumVolumes = [0.25, 1.0, 0.4, 0.3, 1.5, 2, 10, 0.27, 1.0, 1.0, 0.25, 5.0];
     Config.drumPitchRoots = [69, 69, 69, 69, 96, 69, 69, 96, 96, 96, 96, 69, 96];
     Config.drumPitchFilterMult = [100.0, 8.0, 100.0, 100.0, 1.0, 1.0, 1.0, 100.0, 1.0, 100.0, 100.0, 100.0, 100.0];
-    Config.drumWaveIsSoft = [false, true, false, false, true, true, true, true, false, false, true, false];
-    Config.filterNames = ["sustain sharp", "sustain medium", "sustain soft", "decay sharp", "decay medium", "decay soft", "ring", "overtone", "faint", "quiet"];
-    Config.filterBases = [2.0, 3.5, 5.0, 1.0, 2.5, 4.0, -1.0, 1.0, 5, 2.0];
-    Config.filterDecays = [0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0];
-    Config.filterVolumes = [0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06];
+    Config.drumWaveIsSoft = [false, true, false, false, true, true, true, true, false, false, true, false, true];
+    Config.filterNames = ["sustain sharp", "sustain medium", "sustain soft", "decay sharp", "decay medium", "decay soft", "ring", "overtone", "faint", "quiet", "decay rounded"];
+    Config.filterBases = [2.0, 3.5, 5.0, 1.0, 2.5, 4.0, -1.0, 1.0, 5, 2.0, 5];
+    Config.filterDecays = [0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0, 15];
+    Config.filterVolumes = [0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06, 1.6];
     Config.envelopeNames = ["seamless", "sudden", "smooth", "slide", "spring", "subdued", "sing", "shudder"]; // The place to add these is around line 1850.
     Config.effectNames = ["none", "vibrato light", "vibrato delayed", "vibrato heavy", "tremolo light", "tremolo heavy", "tremolo + vibrato", "shake", "quiver", "note destroyer"];
     Config.effectVibratos = [0.0, 0.15, 0.3, 0.45, 0.0, 0.0, 1.0, 0.0, 0.001, 10];
@@ -381,6 +381,7 @@ var beepbox;
         Config._centerWave([1.0, 2.25, 1.0, -1.0, -2.25, -1.0]),
 		Config._centerWave([1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0]),
        	Config._centerWave([0.0, 0.05, 0.125, 0.2, 0.25, 0.3, 0.425, 0.475, 0.525, 0.625, 0.675, 0.725, 0.775, 0.8, 0.825, 0.875, 0.9, 0.925, 0.95, 0.975, 0.98, 0.99, 0.995, 1, 0.995, 0.99, 0.98, 0.975, 0.95, 0.925, 0.9, 0.875, 0.825, 0.8, 0.775, 0.725, 0.675, 0.625, 0.525, 0.475, 0.425, 0.3, 0.25, 0.2, 0.125, 0.05, 0.0, -0.05, -0.125, -0.2, -0.25, -0.3, -0.425, -0.475, -0.525, -0.625, -0.675, -0.725, -0.775, -0.8, -0.825, -0.875, -0.9, -0.925, -0.95, -0.975, -0.98, -0.99, -0.995, -1, -0.995, -0.99, -0.98, -0.975, -0.95, -0.925, -0.9, -0.875, -0.825, -0.8, -0.775, -0.725, -0.675, -0.625, -0.525, -0.475, -0.425, -0.3, -0.25, -0.2, -0.125, -0.05]),
+        Config._centerWave([1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.0, -1.0, -1.1, -1.2, -1.3, -1.4, -1.5, -1.6, -1.7, -1.8, -1.9, -1.8, -1.7, -1.6, -1.5, -1.4, -1.3, -1.2, -1.1, -1.0]),
 
     ];
     Config._drumWaves = [null, null, null, null, null];
@@ -6506,7 +6507,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.4")]),
+                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.5")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
