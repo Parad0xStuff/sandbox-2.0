@@ -320,10 +320,10 @@ var beepbox;
     Config.drumPitchRoots = [69, 69, 69, 69, 96, 69, 69, 96, 96, 96, 96, 69, 96];
     Config.drumPitchFilterMult = [100.0, 8.0, 100.0, 100.0, 1.0, 1.0, 1.0, 100.0, 1.0, 100.0, 100.0, 100.0, 100.0];
     Config.drumWaveIsSoft = [false, true, false, false, true, true, true, true, false, false, true, false, true];
-    Config.filterNames = ["none", "bright", "medium", "soft", "decay bright", "decay medium", "decay soft", "ring", "overtone", "faint", "quiet", "decay rounded"];
-    Config.filterBases = [0.0, 2.0, 3.5, 5.0, 1.0, 2.5, 4.0, -1.0, 1.0, 5, 2.0, 5];
-    Config.filterDecays = [0.0, 0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0, 15];
-    Config.filterVolumes = [0.2, 0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06, 1.6];
+    Config.filterNames = ["bright", "medium", "soft", "decay bright", "decay medium", "decay soft", "ring", "overtone", "faint", "quiet", "decay rounded", "none"];
+    Config.filterBases = [2.0, 3.5, 5.0, 1.0, 2.5, 4.0, -1.0, 1.0, 5, 2.0, 5, 0.0];
+    Config.filterDecays = [0.0, 0.0, 0.0, 10.0, 7.0, 4.0, 0.2, 0.0, 7.5, 0.0, 15, 0.0];
+    Config.filterVolumes = [0.4, 0.7, 1.0, 0.5, 0.75, 1.0, 1.0, 1.0, 1.5, 0.06, 1.6, 0.2];
     Config.envelopeNames = ["seamless", "sudden", "smooth", "slide", "spring", "subdued", "sing", "shudder"]; // The place to add these is around line 1850.
     Config.effectNames = ["none", "vibrato light", "vibrato delayed", "vibrato heavy", "tremolo light", "tremolo heavy", "tremolo + vibrato", "shake", "quiver", "note destroyer"];
     Config.effectVibratos = [0.0, 0.15, 0.3, 0.45, 0.0, 0.0, 1.0, 0.0, 0.001, 10];
@@ -585,7 +585,7 @@ var beepbox;
             this.channelOctaves = [3, 2, 1, 0];
             this.instrumentVolumes = [[0], [0], [0], [0]];
             this.instrumentWaves = [[1], [1], [1], [1]];
-            this.instrumentFilters = [[1], [1], [1], [1]];
+            this.instrumentFilters = [[0], [0], [0], [0]];
             this.instrumentEnvelopes = [[1], [1], [1], [1]];
             this.instrumentEffects = [[0], [0], [0], [0]];
             this.instrumentChorus = [[0], [0], [0], [0]];
@@ -6507,7 +6507,7 @@ var beepbox;
             this.mainLayer = div({ className: "beepboxEditor", tabIndex: "0" }, [
                 this._editorBox,
                 div({ className: "editor-right-side" }, [
-                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.6")]),
+                    div({ style: "text-align: center; color: #999;" }, [text("Sandbox 2.0.6.1")]),
                     div({ style: "margin: 5px 0; display: flex; flex-direction: row; align-items: center;" }, [
                         this._playButton,
                         div({ style: "width: 1px; height: 10px;" }),
